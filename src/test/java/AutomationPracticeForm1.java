@@ -1,10 +1,12 @@
-package tests;
-
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import java.io.File;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -22,18 +24,25 @@ public class AutomationPracticeForm1 {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('#RightSide_Advertisement').remove()");
-
+        executeJavaScript("$('.i-amphtml-fill-content').remove()");
 
         $("#firstName").setValue("Mikhail");
         $("#lastName").setValue("Matskevich");
         $("#userEmail").setValue("myemail@gmail.com");
-        $("label[for=gender-radio-1]").click();
+        $("[for=gender-radio-1]").click();
         $("#userNumber").setValue("123456789");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__day--029").click();
-        executeJavaScript("$('arguments[0].scrollIntoView(true)').");
-//      $(".css-1wa3eu0-placeholder").parent().setValue("skdf");
-        $(".custom-control-label").click();
+        $(".col-md-9").click();
+        $("#subjectsInput").setValue("Physics").pressEnter();
+        $("[for=hobbies-checkbox-2]").click();
+        $("#uploadPicture").uploadFile(new File("src/test/java/tests/selenidescreen.png"));
+
         $("#currentAddress").setValue("Georgia, stret1");
+        $("#state").scrollTo().click();
+        $("#stateCity-wrapper").$(Selectors.byText("NCR")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(Selectors.byText("Delhi")).click();
+
     }
 }
