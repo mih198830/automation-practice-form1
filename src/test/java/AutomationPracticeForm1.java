@@ -37,11 +37,11 @@ public class AutomationPracticeForm1 {
         $("#genterWrapper").$(byText("Male")).click();
 
         //phone number
-        $("#userNumber").setValue("123456789");
+        $("#userNumber").setValue("1234567890");
 
         //dob
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("June");
+        $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__year-select").selectOption("1988");
         $(".react-datepicker__day--029").click();
 
@@ -72,14 +72,18 @@ public class AutomationPracticeForm1 {
 
         $("#submit").click();
 
-//        $(".practice-form-wrapper").shouldHave(
-//                text("Mikhail"),
-//                text("Matskevich"),
-//                text("myemail@gmail.com"),
-//                text("Male"),
-//                text("123456789"),
-//                text(""),
-//
-//        )
+        $(".modal-content").shouldHave(
+                text("Mikhail"),
+                text("Matskevich"),
+                text("myemail@gmail.com"),
+                text("Male"),
+                text("123456789"),
+                text("29 May,1988"),
+                text("English"),
+                text("Sports"),
+                text("Music"),
+                text("selenidescreen.png"),
+                text("Georgia, stret1"),
+                text("NCR Delhi"));
     }
 }
