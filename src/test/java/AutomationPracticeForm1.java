@@ -2,9 +2,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -25,47 +23,34 @@ public class AutomationPracticeForm1 {
         executeJavaScript("$('#RightSide_Advertisement').remove()");
         executeJavaScript("$('.i-amphtml-fill-content').remove()");
 
-        //first name last name
         $("#firstName").setValue("Mikhail");
         $("#lastName").setValue("Matskevich");
 
-        //email
         $("#userEmail").setValue("myemail@gmail.com");
 
-        //radio-button
         $("#genterWrapper").$(byText("Male")).click();
 
-        //phone number
         $("#userNumber").setValue("1234567890");
 
-        //dob
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__year-select").selectOption("1988");
         $(".react-datepicker__day--029").click();
 
-        //subject
         $("#subjectsInput").sendKeys("E");
         $(byText("English")).click();
 
-        //checkbox
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#hobbiesWrapper").$(byText("Reading")).click();
 
-        //upload
         $("#uploadPicture").uploadFile(new File("src/test/java/resources/selenidescreen.png"));
 
-        //address
         $("#currentAddress").setValue("Georgia, stret1");
-
         $("#state").scrollTo().click();
 
-        //state
         $("#stateCity-wrapper").$(Selectors.byText("NCR")).click();
-
-        //city
         $("#city").click();
         $("#stateCity-wrapper").$(Selectors.byText("Delhi")).click();
 
