@@ -2,7 +2,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import java.io.File;
 
@@ -13,13 +12,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AutomationPracticeForm1 {
     @BeforeAll
-    static void BeforeAll() {
+    static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
     }
 
     @Test
-    void PageTest() {
+    void pageTest() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
