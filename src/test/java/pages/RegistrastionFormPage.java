@@ -1,16 +1,14 @@
 package pages;
 
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.ResultsTableComponent;
-import com.codeborne.selenide.Selectors;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrastionFormPage {
 
@@ -21,7 +19,7 @@ public class RegistrastionFormPage {
     SelenideElement lastNameInput = $("#lastName");
     SelenideElement emailInput = $("#userEmail");
     SelenideElement genderRadioButton = $("#genterWrapper");
-    SelenideElement userNumberInput = $("#genterWrapper");
+    SelenideElement userNumberInput = $("#userNumber");
     SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
     SelenideElement subjectInput = $("#subjectsInput");
     SelenideElement hobbiesCheckBox = $("#hobbiesWrapper");
