@@ -26,8 +26,8 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase{
                .setHobbie("Reading")
                .uploadPicture(link)
                .setAddress(address)
-               .scrollToClick();
-               registrastionFormPage.setStateAndCity("NCR", "Delhi")
+               .scrollToClick()
+               .setStateAndCity("NCR", "Delhi")
                .sendForm();
 
         registrastionFormPage.checkResult("Student Name", firstName + " " + lastName)
