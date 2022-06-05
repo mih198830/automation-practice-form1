@@ -66,4 +66,13 @@ public class RandomUtils {
         return getRandomString(5) + timestamp + emailDomain;
     }
 
+
+    public static String randomStringFromArrGender()
+    {
+        String[] arr = {"Male", "Female", "Other"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+
 }

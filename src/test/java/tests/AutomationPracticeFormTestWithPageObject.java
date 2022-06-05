@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import utils.RandomUtils;
 
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
 
@@ -10,7 +11,7 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase {
                .setFirstName(testData.firstName)
                .setLastName(testData.lastName)
                .setEmail(testData.email)
-               .setGender("Male")
+               .setGender(RandomUtils.randomStringFromArrGender())
                .setUserNumber(testData.number)
                .setDateOfBirth("29", "May", "1988")
                .setEnglish("E")
