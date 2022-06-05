@@ -94,6 +94,11 @@ public class RegistrastionFormPage {
         return this;
     }
 
+    public RegistrastionFormPage scrollToClick(){
+        $("#state").scrollTo().click();
+        return this;
+    }
+
     public RegistrastionFormPage setStateAndCity(String state, String city){
         stateCityWrapper.$(Selectors.byText(state)).click();
         citySelector.click();
