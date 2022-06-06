@@ -95,18 +95,4 @@ public class RandomUtils {
         String randomElem = arr[randIdx];
         return randomElem;
     }
-
-    public static String randomState() {
-        String[] arr = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
-        String randomElem = arr[randIdx];
-        return randomElem;
-    }
-
-    public static String randomCity() {
-        String[] arr = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
-        String randomElem = arr[randIdx];
-        return randomElem;
-    }
 }
