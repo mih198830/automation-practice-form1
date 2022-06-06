@@ -73,9 +73,9 @@ public class RegistrastionFormPage {
         return this;
     }
 
-    public RegistrastionFormPage setEnglish(String value){
+    public RegistrastionFormPage setSubject(String value){
         subjectInput.sendKeys(value);
-        $(byText("English")).click();
+        subjectInput.pressEnter();
         return this;
     }
 

@@ -67,20 +67,46 @@ public class RandomUtils {
     }
 
 
-    public static String randomStringFromArrGender()
-    {
+    public static String randomStringFromArrGender() {
         String[] arr = {"Male", "Female", "Other"};
         int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
         String randomElem = arr[randIdx];
         return randomElem;
     }
 
-    public static String randomHobbieFromArr()
-    {
+    public static String randomHobbieFromArr() {
         String[] arr = {"Sports", "Reading", "Music"};
         int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
         String randomElem = arr[randIdx];
         return randomElem;
     }
 
+    public static String randomSubjectFromArr() {
+        String[] arr = {"Mat", "phy", "rt", "History"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+
+    public static String randomMonths() {
+        String[] arr = {"January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+
+    public static String randomState() {
+        String[] arr = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+
+    public static String randomCity() {
+        String[] arr = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
 }
