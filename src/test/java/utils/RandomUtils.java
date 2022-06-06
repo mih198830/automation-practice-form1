@@ -75,4 +75,12 @@ public class RandomUtils {
         return randomElem;
     }
 
+    public static String randomHobbieFromArr()
+    {
+        String[] arr = {"Sports", "Reading", "Music"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+
 }
