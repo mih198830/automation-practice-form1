@@ -1,7 +1,6 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import utils.RandomUtils;
 
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
 
