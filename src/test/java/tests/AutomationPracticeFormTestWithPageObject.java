@@ -15,10 +15,10 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase {
                .setDateOfBirth(testData.day, testData.months, testData.year)
                .setSubject(testData.randomSubject)
                .setHobbie(testData.randomHobbie)
-               .uploadPicture(testData.link)
+               .uploadPicture(testData.picture)
                .setAddress(testData.address)
-               .scrollToClick()
-               .setStateAndCity("NCR", "Delhi")
+               .setState(testData.state)
+               .setCity(testData.city)
                .sendForm();
 
         registrastionFormPage.checkResult("Student Name", testData.firstName + " " + testData.lastName)
@@ -28,8 +28,8 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase {
                         .checkResult("Date of Birth", testData.day + ' ' + testData.months + ',' + testData.year)
                         .checkResult("Subjects", testData.randomSubject)
                         .checkResult("Hobbies", testData.randomHobbie)
-                        .checkResult("Picture", "selenidescreen.png")
+                        .checkResult("Picture", testData.picture)
                         .checkResult("Address", testData.address)
-                        .checkResult("State and City", "NCR Delhi");
+                        .checkResult("State and City", testData.state + ' ' + testData.city);
     }
 }

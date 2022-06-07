@@ -25,8 +25,11 @@ public class RegistrastionFormPage {
     SelenideElement hobbiesCheckBox = $("#hobbiesWrapper");
     SelenideElement uploadImage = $("#uploadPicture");
     SelenideElement currentAddress = $("#currentAddress");
-    SelenideElement stateCityWrapper = $("#stateCity-wrapper");
-    SelenideElement citySelector = $("#city");
+
+    SelenideElement stateInput = $("#state");
+    SelenideElement stateMenuInput = $("#stateCity-wrapper");
+    SelenideElement cityInput = $("#city");
+    SelenideElement cityMenuInput = $("#stateCity-wrapper");
     SelenideElement submitButton = $("#submit");
 
     public RegistrastionFormPage openPage(){
@@ -85,9 +88,10 @@ public class RegistrastionFormPage {
     }
 
     public RegistrastionFormPage uploadPicture(String value){
-        uploadImage.uploadFile(new File(value));
+        uploadImage.uploadFromClasspath(value);
         return this;
     }
+
 
     public RegistrastionFormPage setAddress(String value){
         currentAddress.setValue(value);
@@ -99,10 +103,15 @@ public class RegistrastionFormPage {
         return this;
     }
 
-    public RegistrastionFormPage setStateAndCity(String state, String city){
-        stateCityWrapper.$(Selectors.byText(state)).click();
-        citySelector.click();
-        stateCityWrapper.$(Selectors.byText(city)).click();
+    public RegistrastionFormPage setState(String value) {
+        stateInput.click();
+        stateMenuInput.$(byText(value)).click();
+        return this;
+    }
+
+    public RegistrastionFormPage setCity(String value) {
+        cityInput.click();
+        cityMenuInput.$(byText(value)).click();
         return this;
     }
 
