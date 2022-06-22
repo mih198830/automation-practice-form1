@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import static com.codeborne.selenide.Condition.text;
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class AutomationPracticeFormTest {
+    @Disabled
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
@@ -18,6 +20,7 @@ public class AutomationPracticeFormTest {
     }
 
     @Test
+    @Disabled
     void pageTest() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");

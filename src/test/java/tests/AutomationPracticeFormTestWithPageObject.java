@@ -1,10 +1,12 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Test;
 
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
 
     @Test
+    @Description("Checking all fields availability")
     void pageTest() {
        registrastionFormPage.openPage()
                .setFirstName(testData.firstName)

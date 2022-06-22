@@ -7,12 +7,10 @@ repositories {
     mavenCentral()
 }
 
-group 'qa.guru.allure'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+def allureVersion = "2.18.1",
+    selenideVersion = "6.6.4",
+    junitVersion = "5.8.2",
+    slf4jVersion = '1.7.36'
 
 allure {
     report {
@@ -28,14 +26,14 @@ allure {
     }
 }
 
-
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:6.6.3',
-            'io.qameta.allure:allure-selenide:2.18.1',
-            "org.junit.jupiter:junit-jupiter:5.8.2",
-            "com.github.javafaker:javafaker:1.0.2",
-            "org.slf4j:slf4j-simple:1.7.36"
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.slf4j:slf4j-simple:1.7.36',
+            "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion"
     )
 }
 
