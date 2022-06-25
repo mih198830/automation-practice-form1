@@ -34,8 +34,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         String login = config.login();
         String password = config.password();
-        System.out.println("login: " + login);
-        System.out.println("password: " + password);
         Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub", login, password);
 
     }

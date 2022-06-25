@@ -1,11 +1,7 @@
 package tests;
 
-import config.CredentialsConfig;
 import io.qameta.allure.Description;
-import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
 
 
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
