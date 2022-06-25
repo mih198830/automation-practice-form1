@@ -1,20 +1,29 @@
 package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.CredentialsConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrastionFormPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
+import static java.lang.String.format;
+
+
 public class TestBase {
     RegistrastionFormPage registrastionFormPage = new RegistrastionFormPage();
     TestData testData = new TestData();
     Attach attach = new Attach();
+    static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
     @BeforeAll
+    @Tag("owner")
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -23,7 +32,12 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String login = config.login();
+        String password = config.password();
+        System.out.println("login: " + login);
+        System.out.println("password: " + password);
+        Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub", login, password);
+
     }
     @AfterEach
     void addAttachments() {
