@@ -1,10 +1,24 @@
 package tests;
 
+import config.CredentialsConfig;
 import io.qameta.allure.Description;
+import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class AutomationPracticeFormTestWithPageObject extends TestBase {
 
+
+public class AutomationPracticeFormTestWithPageObject extends TestBase {
+    public class OwnerTests {
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+
+        @Test
+        @Tag("owner")
+        void loginTest() {
+            String login = config.login();
+            String password = config.password();
+        }
+    }
     @Test
     @Description("Checking all fields availability")
     void pageTest() {
