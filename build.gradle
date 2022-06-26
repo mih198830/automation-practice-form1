@@ -65,8 +65,8 @@ task form_test(type: Test) {
         includeTags "formTest"
     }
 }
-task owner_test(type: Test) {
+task smokeTests(type: Test) {
     useJUnitPlatform {
-        includeTags "owner"
+        includeTags "smoke"
     }
 }

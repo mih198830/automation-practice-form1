@@ -25,7 +25,7 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase {
     @Description("Checking all fields availability")
     @Owner("Mikhail")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("formTest")
+    @Tag("smoke")
     void pageTest() {
        registrastionFormPage.openPage()
                .setFirstName(testData.firstName)
