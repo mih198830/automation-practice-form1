@@ -59,9 +59,3 @@ task properties_JenkinsTest(type: Test) {
         includeTags "JenkinsTest"
     }
 }
-
-task owner_test(type: Test) {
-    useJUnitPlatform{
-        includeTags "owner"
-    }
-}

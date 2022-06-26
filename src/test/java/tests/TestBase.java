@@ -29,13 +29,16 @@ public class TestBase {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+        Configuration.browser = System.getProperty("browser", "Chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "103");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.browserCapabilities = capabilities;
         String login = config.login();
         String password = config.password();
-        Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub", login, password);
-
+        String link = config.link();
+        Configuration.remote = format("https://%s:%s%s", login, password, link);
     }
     @AfterEach
     void addAttachments() {
