@@ -16,6 +16,7 @@ public class TestBase {
     TestData testData = new TestData();
     Attach attach = new Attach();
     public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    public static final String baseUrl = "https://demoqa.com";
 
     @BeforeAll
     static void beforeAll() {
@@ -24,9 +25,9 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "103");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.baseUrl = baseUrl;
         Configuration.browserSize = "1920x1080";
         Configuration.browserCapabilities = capabilities;
         String login = config.login();

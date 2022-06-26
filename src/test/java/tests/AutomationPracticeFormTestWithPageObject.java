@@ -6,24 +6,13 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-
+@Owner("Mikhail")
+@Severity(SeverityLevel.NORMAL)
+@Tag("smoke")
+@Feature("Student registration")
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
-    public class OwnerTests {
-
-
-        @Test
-        @Tag("owner")
-        void loginTest() {
-            String login = config.login();
-            String password = config.password();
-        }
-    }
     @Test
     @Description("Checking all fields availability")
-    @Owner("Mikhail")
-    @Severity(SeverityLevel.NORMAL)
-    @Tag("smoke")
-    @Feature("Student registration")
     void pageTest() {
        registrastionFormPage.openPage()
                .setFirstName(testData.firstName)
