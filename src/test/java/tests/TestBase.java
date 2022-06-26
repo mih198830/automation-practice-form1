@@ -38,7 +38,7 @@ public class TestBase {
         String login = config.login();
         String password = config.password();
         String link = config.link();
-        Configuration.remote = format("https://%s:%s%s", login, password, link);
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
     @AfterEach
     void addAttachments() {

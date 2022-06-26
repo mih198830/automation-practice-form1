@@ -39,10 +39,6 @@ dependencies {
 }
 
 tasks.withType(Test) {
-    useJUnitPlatform()
-}
-
-tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -54,8 +50,8 @@ tasks.withType(Test) {
     }
 }
 
-task properties_JenkinsTest(type: Test) {
+task properties_test1(type: Test) {
     useJUnitPlatform{
-        includeTags "JenkinsTest"
+        includeTags "smokeTest"
     }
 }
