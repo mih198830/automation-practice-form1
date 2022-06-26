@@ -1,10 +1,7 @@
 package tests;
 
 import config.CredentialsConfig;
-import io.qameta.allure.Description;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 public class AutomationPracticeFormTestWithPageObject extends TestBase {
     public class OwnerTests {
-        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+
 
         @Test
         @Tag("owner")
@@ -26,6 +23,7 @@ public class AutomationPracticeFormTestWithPageObject extends TestBase {
     @Owner("Mikhail")
     @Severity(SeverityLevel.NORMAL)
     @Tag("smoke")
+    @Feature("Student registration")
     void pageTest() {
        registrastionFormPage.openPage()
                .setFirstName(testData.firstName)
