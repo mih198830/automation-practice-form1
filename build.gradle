@@ -54,8 +54,19 @@ tasks.withType(Test) {
     }
 }
 
-task properties_JenkinsTest(type: Test) {
-    useJUnitPlatform{
-        includeTags "JenkinsTest"
+
+task prop_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "test1"
+    }
+}
+task form_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "formTest"
+    }
+}
+task owner_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "owner"
     }
 }
