@@ -10,7 +10,7 @@ public class SystemPropertiesTests {
     @Tag("JenkinsTest")
     void systemTest() {
         String browser = System.getProperty("browser", "Chrome");
-        String version = System.getProperty("version", "103");
+        String version = System.getProperty("version", "99");
         String browserSize = System.getProperty("browserSize", "1920x1080");
         System.out.println("I am testing " + browser);
     }
