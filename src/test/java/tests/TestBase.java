@@ -33,7 +33,6 @@ public class TestBase {
         String login = config.login();
         String password = config.password();
         String remoteUrl = config.remoteUrl();
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = String.format("https://%s:%s@%s", login, password, remoteUrl);
     }
     @AfterEach
