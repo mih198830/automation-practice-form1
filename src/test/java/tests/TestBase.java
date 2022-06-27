@@ -16,7 +16,6 @@ public class TestBase {
     TestData testData = new TestData();
     Attach attach = new Attach();
     public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    public static final String baseUrl = "https://demoqa.com";
 
     @BeforeAll
     static void beforeAll() {
@@ -27,7 +26,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.baseUrl = baseUrl;
+        Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browserCapabilities = capabilities;
         String remoteUrl = System.getProperty("remoteUrl");
         Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteUrl);
