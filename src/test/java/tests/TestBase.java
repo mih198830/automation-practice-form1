@@ -28,11 +28,10 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.baseUrl = baseUrl;
-        Configuration.browserSize = "1920x1080";
         Configuration.browserCapabilities = capabilities;
         String login = config.login();
         String password = config.password();
-        String remoteUrl = config.remoteUrl();
+        String remoteUrl = System.getProperty("remoteUrl");
         Configuration.remote = String.format("https://%s:%s@%s", login, password, remoteUrl);
     }
     @AfterEach
